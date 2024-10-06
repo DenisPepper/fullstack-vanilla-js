@@ -49,4 +49,24 @@ export default class View extends ViewBase {
       fn({ name, age, email });
     });
   }
+
+  /**
+   * Resets the form fields to their initial state.
+   * @returns {void}
+   */
+  resetForm() {
+    this.#form.reset();
+  }
+
+  /**
+   * Displays a notification to the user.
+   * This method can be overridden to change how notifications are presented.
+   * @param {Object} notification - The notification to display.
+   * @param {string} notification.msg - The message to display to the user.
+   * @param {boolean} notification.isError - Whether the message is an error.
+   * @returns {void}
+   */
+  notify({ msg, isError }) {
+    alert(msg);
+  }
 }

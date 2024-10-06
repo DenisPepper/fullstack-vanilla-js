@@ -32,6 +32,15 @@ export default class Controller {
   }
 
   #onSubmit({ name, age, email }) {
+    if (!this.#isValid({ name, age, email })) {
+      this.#view.notify({ msg: 'Заполните все поля!', isError: true });
+      return;
+    }
     this.#view.render([{ name, age, email }]);
+    this.#view.resetForm();
+  }
+
+  #isValid(data) {
+    return data.name && data.age && data.email;
   }
 }
