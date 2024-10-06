@@ -1,3 +1,10 @@
+import Controller from '../src/shared/controller.js';
+
 const platform = globalThis.window ? 'web' : 'console';
 
-await import(`./../src/platforms/${platform}/view.js`);
+const { default: View } = await import(`./../src/platforms/${platform}/view.js`);
+
+// Factory design pattern`  
+Controller.init({
+  view: new View(),
+});
