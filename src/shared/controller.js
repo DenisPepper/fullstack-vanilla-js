@@ -27,6 +27,11 @@ export default class Controller {
       { name: 'Robert', age: 32, email: 'robert@host.com' },
       { name: 'Henry', age: 28, email: 'henry@host.com' },
     ];
+    this.#view.configureFormSubmit(this.#onSubmit.bind(this));
     this.#view.render(initialData);
+  }
+
+  #onSubmit({ name, age, email }) {
+    this.#view.render([{ name, age, email }]);
   }
 }
