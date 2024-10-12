@@ -6,7 +6,7 @@
   "scripts": {
     "web": "npx browser-sync './' ui/",
     "cli": "node ui/index.js",
-    "test:dev": "node --inspect --watch --test test/"
+    "test": "node --inspect --watch --test test/"
   },
   "keywords": [],
   "author": "pepperlogic",
